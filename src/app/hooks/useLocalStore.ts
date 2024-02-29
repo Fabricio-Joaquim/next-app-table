@@ -15,6 +15,9 @@ const useLocalStore = (key: string, initialValue: any) => {
 
   const setStoredValue = useCallback(
     (newValue: unknown) => {
+      if (typeof window === 'undefined') {
+        return;
+      }
       setValue(newValue);
       localStorage.setItem(key, JSON.stringify(newValue));
     },

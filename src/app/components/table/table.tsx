@@ -11,12 +11,8 @@ import {
   } from '@tanstack/react-table'
   import React, { useMemo, useState, useCallback } from 'react'
 import { Table } from '.';
-  
-  interface ITableGenericHeader {
-    header: string;
-    accessorKey: string;
-  }
-  
+import { ITableGenericHeader } from '@/app/model/TableHeader';
+    
   interface ITableGenericProps {
     readonly headers: ITableGenericHeader[];
     readonly data: any[];
@@ -90,7 +86,7 @@ import { Table } from '.';
           <Table.Search resetSearch={resetSearch} search={search} handlerChangeSearch={handlerChangeSearch} />
         </div>
         <div className="overflow-y-auto">
-          <table className='striped-table w-full'>
+          <table className='striped-table w-full border rounded-lg !important'>
             <Table.Header table={table} />
             <Table.Body table={table} />
           </table>

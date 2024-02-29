@@ -12,7 +12,7 @@ export const Row = ({ cell, children, dataLabel }: IRowProps) => {
         <td
             data-label={dataLabel ?? cell.column.columnDef.header}
             key={cell.id}
-            className="lg:py-4 lg:px-6 lg:border-b md:border-gray-200 dark:border-gray-800"
+            className="lg:py-4 lg:px-1 lg:border-b md:border-gray-200 dark:border-white-800"
         >
             {children}
         </td>

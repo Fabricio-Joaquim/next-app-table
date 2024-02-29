@@ -1,9 +1,10 @@
 //@ts-nocheck
 import { Table, flexRender } from "@tanstack/react-table"
+import { RiCloseCircleFill } from "react-icons/ri"
 import { FaCheckCircle } from "react-icons/fa"
 import { IconMobile } from "./mobile/Icon"
 import { Row } from "./Row"
-import { RiCloseCircleFill } from "react-icons/ri"
+import Image from "next/image"
 
 export const TableBody = ({ table }: { table: Table<unknown> }) => {
   return (
@@ -19,7 +20,7 @@ export const TableBody = ({ table }: { table: Table<unknown> }) => {
                     {
                       cell.getIsPlaceholder() ? null : (
                         <>
-                          <span className={`rounded-md py-[2px] px-[10px] hidden lg:inline-block  ${cell.getValue() === "Available" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+                          <span className={`rounded-md py-[2px] px-[10px] hidden md:inline-block  ${cell.getValue() === "Available" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
                             {cell.getValue()}
                           </span>
                           <IconMobile
@@ -35,9 +36,8 @@ export const TableBody = ({ table }: { table: Table<unknown> }) => {
                 return (
                   <Row key={cell.column.columnDef.accessorKey} cell={cell}>
                     {
-                      cell.getIsPlaceholder() ? null : (
-                        <img src={cell.getValue()} alt="img" className="w-12 h-12 rounded-sm" />
-                      )}
+                      cell.getIsPlaceholder() ? null : (<Image src={cell.getValue()} height={48} width={48} alt="img" className="w-12 h-12 rounded-sm" />)
+                    }
                   </Row>
                 )
               }
