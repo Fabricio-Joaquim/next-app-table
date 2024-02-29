@@ -85,7 +85,7 @@ import { Table } from '.';
   
     return (
       <div className="p-2 w-full">
-        <div className='flex justify-between my-2'>
+        <div className='flex justify-between my-2 items-end gap-2'>
           <Table.LimitSize table={table} sizeOptions={sizeOptions} />
           <Table.Search resetSearch={resetSearch} search={search} handlerChangeSearch={handlerChangeSearch} />
         </div>
