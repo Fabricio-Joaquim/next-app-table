@@ -25,7 +25,7 @@ export const TableFooter = ({ table }: { table: Table<unknown> }) =>
             <div>Page</div>
             <strong>
                 {table.getState().pagination.pageIndex + 1} of{' '}
-                {table.getPageCount()}
+                {Math.ceil(table.getPageCount())}
             </strong>
         </span>
         <button
