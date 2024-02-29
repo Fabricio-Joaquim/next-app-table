@@ -2,6 +2,9 @@ import { useState, useCallback } from 'react';
 
 const useLocalStore = (key: string, initialValue: any) => {
   const [value, setValue] = useState(() => {
+    if (typeof window === 'undefined') {
+      return initialValue;
+    }
 
     const storedValue = localStorage.getItem(key);
     if (storedValue) {
