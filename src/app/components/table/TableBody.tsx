@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Table, flexRender } from "@tanstack/react-table"
 
 export const TableBody = ({ table }: { table: Table<unknown> }) => {
